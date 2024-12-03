@@ -9,14 +9,23 @@ Lvl 1: data imputation
     1. use median for missing values
     2. drop all rows with any missing value
     3. use model to fill in gene and use median for the rest
-- use raw predictions to finf best
 
-Lvl 2 - Feature selection:
+- use raw predictions to find best
+** gene_predicted_rest_median_imputed performs the best.
+
+lvl 2: outlier removal (only non-mri data)
+    1. replace outlier with median
+    2. dropp outliers
+
+
+Lvl 3 - Feature selection:
     1. PCA on mri 
         - explore corrolation
-    2. PCA on all but three mandatory fields
+    2. PCA on all but three mandatory fields [ER, HER2, Gene]
     3. Manifold learning
 
-lvl 3 - train
+
+
+lvl 4 - train
     1. SVM raw
     2. SVM grid search
