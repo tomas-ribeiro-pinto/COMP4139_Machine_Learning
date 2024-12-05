@@ -20,6 +20,9 @@ lin_reg = LinearRegression()
 from sklearn.tree import DecisionTreeRegressor
 tree_reg = DecisionTreeRegressor(max_depth=1000)
 
+from sklearn.neighbors import KNeighborsRegressor
+knn = KNeighborsRegressor(n_neighbors=5)
+
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score, root_mean_squared_error
 #######
 
@@ -75,6 +78,12 @@ for file in os.listdir(dir):
     tree_rmse = root_mean_squared_error(y_test, tree_pred)
     tree_r2 = r2_score(y_test, tree_pred)
 
+    knn.fit(X_train_scaled, y_train)
+    knn_pred = knn.predict(X_test_scaled)
+    knn_mae = mean_absolute_error(y_test, knn_pred)
+    knn_rmse = root_mean_squared_error(y_test, knn_pred)
+    knn_r2 = r2_score(y_test, knn_pred)
+
 
     local_score = {
         "Random Forest": {
@@ -101,6 +110,11 @@ for file in os.listdir(dir):
             "MAE": tree_mae,
             "RMSE": tree_rmse,
             "R2": tree_r2
+        },
+        "KNN": {
+            "MAE": knn_mae,
+            "RMSE": knn_rmse,
+            "R2": knn_r2
         }
     }
 

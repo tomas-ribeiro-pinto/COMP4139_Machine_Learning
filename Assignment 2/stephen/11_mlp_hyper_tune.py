@@ -1,10 +1,9 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score, root_mean_squared_error
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error, r2_score, root_mean_squared_error
 
-def hyper_tune_random_forest(src):
+def hyper_tune_mlp(src):
     df = pd.read_csv(src)
     df.drop(columns=['ID'], inplace=True)
     y = df['RelapseFreeSurvival (outcome)']
@@ -18,32 +17,28 @@ def hyper_tune_random_forest(src):
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
 
-    # Define the model
-    rnd_forest = RandomForestRegressor(random_state=42)
-
-    # Define the parameter grid
-    param_grid = {
-        'max_depth': [10, 20, 30, 40, 50, None],
-        'n_estimators': [50, 75, 100, 150, 200],
-        'max_features': ['sqrt'],
-        'min_samples_split': [2, 5, 10],
-        'min_samples_leaf': [1, 2, 4]
-    }
+    from sklearn.neural_network import MLPRegressor
+    mlp_reg = MLPRegressor()
+    # Define parameter grid
+    param_grid = [
+        {
+            'activation' : ['identity', 'logistic', 'tanh', 'relu'],
+            'solver' : ['lbfgs', 'sgd', 'adam'],
+            'hidden_layer_sizes': [
+                (1,),(2,),(3,),(4,),(5,),(6,),(7,),(8,),(9,),(10,),(11,), (12,),(13,),(14,),(15,),(16,),(17,),(18,),(19,),(20,),(21,)
+            ]
+        }
+    ]
 
     # Perform grid search
-    grid_search = GridSearchCV(estimator=rnd_forest, param_grid=param_grid, cv=5, n_jobs=-1, verbose=2)
+    grid_search = GridSearchCV(estimator=mlp_reg, param_grid=param_grid, n_jobs=-1, cv=3, scoring='neg_mean_squared_error')
     grid_search.fit(X_train_scaled, y_train)
 
-    # Get the best model
-    best_rnd_forest = grid_search.best_estimator_
-
-    # Make predictions
-    rnd_pred = best_rnd_forest.predict(X_test_scaled)
-
-    # Evaluate the model
-    rnd_mae = mean_absolute_error(y_test, rnd_pred)
-    rnd_rmse = root_mean_squared_error(y_test, rnd_pred)
-    rnd_r2 = r2_score(y_test, rnd_pred)
+    # Predict and evaluate
+    y_pred = grid_search.predict(X_test_scaled)
+    rnd_mae = mean_absolute_error(y_test, y_pred)
+    rnd_rmse = root_mean_squared_error(y_test, y_pred)
+    rnd_r2 = r2_score(y_test, y_pred)
 
     res = {
         'best_params': grid_search.best_params_,
@@ -80,9 +75,9 @@ if __name__ == '__main__':
     ]
     result = {}
     for file in files:
-        best = hyper_tune_random_forest(file)
+        best = hyper_tune_mlp(file)
         result[file] = best
     
-    with open('hyper_tune_results/hyper_tune_random_forest_result.json', 'w') as f:
+    with open('hyper_tune_results/hyper_tune_mlp_result.json', 'w') as f:
         json.dump(result, f, indent=4)
         

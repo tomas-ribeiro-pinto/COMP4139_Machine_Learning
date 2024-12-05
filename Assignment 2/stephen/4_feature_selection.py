@@ -3,7 +3,9 @@ Results form 2_test_imputed_base_line.py shows that gene predicted dataset perfo
 Using this dataset to perform feature selection
 '''
 import pandas as pd
-source = 'imputed_csv/gene_predicted_rest_median_imputed.csv'
+# source = 'imputed_csv/gene_predicted_rest_median_imputed.csv'
+source = 'imputed_csv/gene_predicted_rest_median_imputed_no_outliers.csv'
+
 
 df = pd.read_csv(source)
 y = df['RelapseFreeSurvival (outcome)']

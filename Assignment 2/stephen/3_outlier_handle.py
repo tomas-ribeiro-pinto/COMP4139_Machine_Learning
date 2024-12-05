@@ -39,13 +39,24 @@ def vote(data):
 if __name__ == '__main__':
   df = pd.read_csv('imputed_csv/gene_predicted_rest_median_imputed.csv')
 
-  non_mri = df.iloc[:, 3:14]
+  non_mri = df.iloc[:, 3:]
   # print(non_mri.columns)
   
   # 1. fill non-mri outlier with median
+  indicies = set()
   for col in non_mri.columns:
     outliers = vote(non_mri[col])
-    print(f'{col} has {sum(outliers)} outliers')
+    for i in range(len(outliers)):
+      if outliers[i]:
+        indicies.add(i)
+  
+  print('Outliers:', len(indicies))
+
+  # drop outliers 
+  dropped_df = df.copy()
+  dropped_df.drop(index=list(indicies), inplace=True)
+
+  dropped_df.to_csv('imputed_csv/gene_predicted_rest_median_imputed_no_outliers.csv', index=False)
   
   
 # basically bas no outliers - ignore this step

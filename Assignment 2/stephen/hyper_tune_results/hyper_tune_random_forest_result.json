@@ -1,51 +1,51 @@
 {
     "pca_csv/all_pca_1.csv": {
         "best_params": {
-            "max_depth": 20,
-            "max_features": "sqrt",
-            "min_samples_leaf": 4,
-            "min_samples_split": 10,
-            "n_estimators": 50
-        },
-        "mean_absolute_error": 21.92558328830651,
-        "root_mean_squared_error": 30.15415678063888,
-        "r2_score": -0.038207271536666365
-    },
-    "pca_csv/all_pca_2.csv": {
-        "best_params": {
             "max_depth": 10,
             "max_features": "sqrt",
             "min_samples_leaf": 4,
             "min_samples_split": 10,
             "n_estimators": 50
         },
-        "mean_absolute_error": 20.879527863081638,
-        "root_mean_squared_error": 28.914202256221724,
-        "r2_score": 0.045420467026288436
+        "mean_absolute_error": 22.98652289987123,
+        "root_mean_squared_error": 27.041834322277666,
+        "r2_score": -0.06260979858387095
+    },
+    "pca_csv/all_pca_2.csv": {
+        "best_params": {
+            "max_depth": 20,
+            "max_features": "sqrt",
+            "min_samples_leaf": 4,
+            "min_samples_split": 10,
+            "n_estimators": 200
+        },
+        "mean_absolute_error": 23.97029893534545,
+        "root_mean_squared_error": 27.326014509941707,
+        "r2_score": -0.0850608904722514
     },
     "pca_csv/mri_pca_1.csv": {
         "best_params": {
             "max_depth": 20,
             "max_features": "sqrt",
             "min_samples_leaf": 2,
-            "min_samples_split": 2,
-            "n_estimators": 200
+            "min_samples_split": 10,
+            "n_estimators": 75
         },
-        "mean_absolute_error": 21.117381119776944,
-        "root_mean_squared_error": 29.076822481118374,
-        "r2_score": 0.03465271539250947
+        "mean_absolute_error": 21.990185158084163,
+        "root_mean_squared_error": 25.568489123618704,
+        "r2_score": 0.05002614587634391
     },
     "pca_csv/mri_pca_2.csv": {
         "best_params": {
-            "max_depth": 10,
+            "max_depth": 20,
             "max_features": "sqrt",
             "min_samples_leaf": 4,
             "min_samples_split": 10,
-            "n_estimators": 200
+            "n_estimators": 50
         },
-        "mean_absolute_error": 20.702912532330192,
-        "root_mean_squared_error": 28.214982084999892,
-        "r2_score": 0.09103063389617105
+        "mean_absolute_error": 22.30623715497175,
+        "root_mean_squared_error": 25.58984496154616,
+        "r2_score": 0.048438569854026614
     },
     "normalized_mri/normal_mri_cols_only.csv": {
         "best_params": {
@@ -143,16 +143,40 @@
         "root_mean_squared_error": 28.58499215396116,
         "r2_score": 0.06703394227120585
     },
-    "k_best_csv/k_best_5.csv": {
+    "imputed_csv/gene_predicted_rest_median_imputed_no_outliers.csv": {
         "best_params": {
             "max_depth": 20,
             "max_features": "sqrt",
+            "min_samples_leaf": 2,
+            "min_samples_split": 5,
+            "n_estimators": 100
+        },
+        "mean_absolute_error": 21.942931711411237,
+        "root_mean_squared_error": 26.367949405727423,
+        "r2_score": -0.01030902939075462
+    },
+    "k_best_csv/k_best_5.csv": {
+        "best_params": {
+            "max_depth": 10,
+            "max_features": "sqrt",
             "min_samples_leaf": 4,
             "min_samples_split": 10,
-            "n_estimators": 50
+            "n_estimators": 150
         },
-        "mean_absolute_error": 22.199181591245484,
-        "root_mean_squared_error": 29.108115911507046,
-        "r2_score": 0.03257372040982354
+        "mean_absolute_error": 23.806109037402916,
+        "root_mean_squared_error": 28.54261511688667,
+        "r2_score": -0.1838291881841969
+    },
+    "lasso_csv/lasso_important_features.csv": {
+        "best_params": {
+            "max_depth": 10,
+            "max_features": "sqrt",
+            "min_samples_leaf": 2,
+            "min_samples_split": 2,
+            "n_estimators": 75
+        },
+        "mean_absolute_error": 21.833163113943737,
+        "root_mean_squared_error": 28.703426264665953,
+        "r2_score": 0.05928694638524101
     }
 }

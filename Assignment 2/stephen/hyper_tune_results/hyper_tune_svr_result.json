@@ -1,0 +1,152 @@
+{
+    "pca_csv/all_pca_1.csv": {
+        "best_params": {
+            "C": 1,
+            "gamma": 0.001,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.871694388534788,
+        "root_mean_squared_error": 26.592520869545396,
+        "r2_score": -0.02759158343848145
+    },
+    "pca_csv/all_pca_2.csv": {
+        "best_params": {
+            "C": 1,
+            "gamma": 0.001,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.89159602552528,
+        "root_mean_squared_error": 26.608255024350633,
+        "r2_score": -0.02880794561206801
+    },
+    "pca_csv/mri_pca_1.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.812308583675815,
+        "root_mean_squared_error": 27.028838290147053,
+        "r2_score": -0.061588684962923024
+    },
+    "pca_csv/mri_pca_2.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.65780441134112,
+        "root_mean_squared_error": 26.989846738977224,
+        "r2_score": -0.05852801823978626
+    },
+    "normalized_mri/normal_mri_cols_only.csv": {
+        "best_params": {
+            "C": 1,
+            "gamma": 0.1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.30212843254055,
+        "root_mean_squared_error": 29.529984483757573,
+        "r2_score": 0.004328383775119904
+    },
+    "normalized_mri/normal_mri_pca.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 23.263380310311636,
+        "root_mean_squared_error": 30.14270781825445,
+        "r2_score": -0.03741904591551792
+    },
+    "correlation/correlation_filtered.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.001,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.420081748308732,
+        "root_mean_squared_error": 29.558544794865792,
+        "r2_score": 0.00240149874098039
+    },
+    "correlation/filterd_by_coorelation_pca_1.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.01,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.277988219893107,
+        "root_mean_squared_error": 29.37876069421271,
+        "r2_score": 0.014499990917024919
+    },
+    "correlation/filterd_by_coorelation_pca_2.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.01,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.303888637845557,
+        "root_mean_squared_error": 29.336936938112263,
+        "r2_score": 0.01730391950039778
+    },
+    "imputed_csv/gene_predicted_rest_median_imputed.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.01,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.609566609148168,
+        "root_mean_squared_error": 30.064092533591573,
+        "r2_score": -0.03201471133593503
+    },
+    "imputed_csv/na_pcr_drapped.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.01,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 23.1596090831659,
+        "root_mean_squared_error": 30.371394483165865,
+        "r2_score": -0.053220138774038084
+    },
+    "imputed_csv/na_pcr_missing_median_imputed.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.01,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.651989419347178,
+        "root_mean_squared_error": 30.04169837442717,
+        "r2_score": -0.030477828479800406
+    },
+    "imputed_csv/gene_predicted_rest_median_imputed_no_outliers.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.001,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 21.833868405211465,
+        "root_mean_squared_error": 25.940226862879495,
+        "r2_score": 0.022202188566735837
+    },
+    "k_best_csv/k_best_5.csv": {
+        "best_params": {
+            "C": 0.1,
+            "gamma": 0.001,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.894803458159977,
+        "root_mean_squared_error": 26.60480166829315,
+        "r2_score": -0.028540914978545384
+    },
+    "lasso_csv/lasso_important_features.csv": {
+        "best_params": {
+            "C": 100,
+            "gamma": 0.001,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 21.61410657110043,
+        "root_mean_squared_error": 28.92118065657119,
+        "r2_score": 0.044959638679607505
+    }
+}

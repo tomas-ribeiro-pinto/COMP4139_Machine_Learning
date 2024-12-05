@@ -1,0 +1,182 @@
+{
+    "pca_csv/all_pca_1.csv": {
+        "best_params": {
+            "activation": "tanh",
+            "hidden_layer_sizes": [
+                1
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 23.43535112643275,
+        "root_mean_squared_error": 26.984745316416596,
+        "r2_score": -0.05812790567660775
+    },
+    "pca_csv/all_pca_2.csv": {
+        "best_params": {
+            "activation": "logistic",
+            "hidden_layer_sizes": [
+                1
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 23.44766083001254,
+        "root_mean_squared_error": 27.01179569462264,
+        "r2_score": -0.06025037197314709
+    },
+    "pca_csv/mri_pca_1.csv": {
+        "best_params": {
+            "activation": "tanh",
+            "hidden_layer_sizes": [
+                1
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 23.375154148949242,
+        "root_mean_squared_error": 26.99780083526878,
+        "r2_score": -0.05915202137164988
+    },
+    "pca_csv/mri_pca_2.csv": {
+        "best_params": {
+            "activation": "tanh",
+            "hidden_layer_sizes": [
+                2
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 22.766215312198636,
+        "root_mean_squared_error": 26.781385340022293,
+        "r2_score": -0.04223966584337857
+    },
+    "normalized_mri/normal_mri_cols_only.csv": {
+        "best_params": {
+            "activation": "relu",
+            "hidden_layer_sizes": [
+                1
+            ],
+            "solver": "lbfgs"
+        },
+        "mean_absolute_error": 22.569079665333653,
+        "root_mean_squared_error": 30.985136525850958,
+        "r2_score": -0.09621696117783518
+    },
+    "normalized_mri/normal_mri_pca.csv": {
+        "best_params": {
+            "activation": "tanh",
+            "hidden_layer_sizes": [
+                1
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 23.350860759432106,
+        "root_mean_squared_error": 33.16297081420472,
+        "r2_score": -0.2557308003236256
+    },
+    "correlation/correlation_filtered.csv": {
+        "best_params": {
+            "activation": "relu",
+            "hidden_layer_sizes": [
+                1
+            ],
+            "solver": "lbfgs"
+        },
+        "mean_absolute_error": 22.650360909556245,
+        "root_mean_squared_error": 29.15625842110372,
+        "r2_score": 0.029370981750293623
+    },
+    "correlation/filterd_by_coorelation_pca_1.csv": {
+        "best_params": {
+            "activation": "identity",
+            "hidden_layer_sizes": [
+                17
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 22.613435984147717,
+        "root_mean_squared_error": 29.551754333756485,
+        "r2_score": 0.0028598011210203556
+    },
+    "correlation/filterd_by_coorelation_pca_2.csv": {
+        "best_params": {
+            "activation": "tanh",
+            "hidden_layer_sizes": [
+                4
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 22.60900067037529,
+        "root_mean_squared_error": 29.885416326809715,
+        "r2_score": -0.019784272424914873
+    },
+    "imputed_csv/gene_predicted_rest_median_imputed.csv": {
+        "best_params": {
+            "activation": "tanh",
+            "hidden_layer_sizes": [
+                1
+            ],
+            "solver": "lbfgs"
+        },
+        "mean_absolute_error": 22.997728029690684,
+        "root_mean_squared_error": 29.787163331506527,
+        "r2_score": -0.013089893348057213
+    },
+    "imputed_csv/na_pcr_drapped.csv": {
+        "best_params": {
+            "activation": "logistic",
+            "hidden_layer_sizes": [
+                9
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 23.273278366304947,
+        "root_mean_squared_error": 29.27440521843275,
+        "r2_score": 0.02148869079625637
+    },
+    "imputed_csv/na_pcr_missing_median_imputed.csv": {
+        "best_params": {
+            "activation": "tanh",
+            "hidden_layer_sizes": [
+                2
+            ],
+            "solver": "lbfgs"
+        },
+        "mean_absolute_error": 21.348414037601238,
+        "root_mean_squared_error": 29.563744870824536,
+        "r2_score": 0.0020504635779760028
+    },
+    "imputed_csv/gene_predicted_rest_median_imputed_no_outliers.csv": {
+        "best_params": {
+            "activation": "logistic",
+            "hidden_layer_sizes": [
+                1
+            ],
+            "solver": "lbfgs"
+        },
+        "mean_absolute_error": 23.05441378694413,
+        "root_mean_squared_error": 27.530079579229277,
+        "r2_score": -0.10132742627284008
+    },
+    "k_best_csv/k_best_5.csv": {
+        "best_params": {
+            "activation": "tanh",
+            "hidden_layer_sizes": [
+                3
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 23.53438298439615,
+        "root_mean_squared_error": 27.06885069344943,
+        "r2_score": -0.06473407763989947
+    },
+    "lasso_csv/lasso_important_features.csv": {
+        "best_params": {
+            "activation": "identity",
+            "hidden_layer_sizes": [
+                21
+            ],
+            "solver": "sgd"
+        },
+        "mean_absolute_error": 22.87454583147717,
+        "root_mean_squared_error": 30.13755580173662,
+        "r2_score": -0.037064443182155404
+    }
+}
