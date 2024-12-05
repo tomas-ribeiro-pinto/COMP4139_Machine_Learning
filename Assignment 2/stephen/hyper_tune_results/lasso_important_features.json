@@ -1,0 +1,14 @@
+{
+    "lasso_csv/lasso_important_features.csv": {
+        "best_params": {
+            "max_depth": 10,
+            "max_features": "sqrt",
+            "min_samples_leaf": 4,
+            "min_samples_split": 2,
+            "n_estimators": 400
+        },
+        "mean_absolute_error": 21.366731999700566,
+        "root_mean_squared_error": 28.001203139211896,
+        "r2_score": 0.1047525889298504
+    }
+}
