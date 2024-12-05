@@ -17,12 +17,12 @@ lvl 2: outlier removal (only non-mri data)
     1. replace outlier with median
     2. dropp outliers
 
-
 Lvl 3 - Feature selection:
     1. PCA on mri 
         - explore corrolation
     2. PCA on all but three mandatory fields [ER, HER2, Gene]
-    3. Manifold learning
+    3. PCA on normally distributed mri fields
+    4. Manifold learning
 
 
 

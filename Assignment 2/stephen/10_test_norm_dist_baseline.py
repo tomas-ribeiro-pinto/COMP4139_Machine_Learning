@@ -12,7 +12,7 @@ from sklearn.svm import SVR
 svr = SVR(C=6, gamma=0.1, kernel='rbf')
 
 from sklearn.neural_network import MLPRegressor
-mlp_reg = MLPRegressor(random_state=1, max_iter=300)
+mlp_reg = MLPRegressor(random_state=1, max_iter=3000)
 
 from sklearn.linear_model import LinearRegression
 lin_reg = LinearRegression()
@@ -23,7 +23,7 @@ tree_reg = DecisionTreeRegressor(max_depth=1000)
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score, root_mean_squared_error
 #######
 
-dir = 'correlation/'
+dir = 'normalized_mri/'
 scaler = StandardScaler()
 
 socres = {}
@@ -39,7 +39,7 @@ for file in os.listdir(dir):
     X = df.drop(columns=['RelapseFreeSurvival (outcome)'])
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
+
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
 
@@ -107,5 +107,5 @@ for file in os.listdir(dir):
 
 
 import json
-with open('correlation/scores.json', 'w') as f:
+with open(dir+'scores.json', 'w') as f:
     json.dump(socres, f, indent=4)

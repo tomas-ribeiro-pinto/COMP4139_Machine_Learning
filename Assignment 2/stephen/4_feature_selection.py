@@ -27,7 +27,7 @@ pca = PCA(n_components=2)
 X_mri_pca = pca.fit_transform(X_mri)
 
 rest_cols = X.columns[:12]
-X_rest = X[rest_cols]
+X_rest = X[rest_cols].copy()
 X_rest.loc[:, 'mri_pca_1'] = X_mri_pca[:, 0]
 
 X_rest.insert(0, 'ID', ID)
@@ -80,7 +80,11 @@ df_fin.to_csv(
 ### K Best Selection ###
 from sklearn.feature_selection import SelectKBest, chi2, mutual_info_classif, f_classif
 
-selector = SelectKBest(k=5)
+from sklearn.feature_selection import f_regression, mutual_info_regression
+from sklearn.feature_selection import SelectKBest
+
+# selector = SelectKBest(k=5)
+selector = SelectKBest(score_func=f_regression, k='all')
 X_new = selector.fit_transform(X, y)
 
 df_fin = pd.DataFrame()
@@ -102,6 +106,30 @@ df_fin.to_csv(
   index=False
 )
 
+## remove features with low variance
+from sklearn.feature_selection import VarianceThreshold
+vt_working = X.copy()
+vt = VarianceThreshold(threshold=0.1)  # Minimum variance threshold
+# X_reduced = vt.fit_transform(vt_working)
+reduction = vt.fit(vt_working)
+support_v = vt.get_support()
 
+# compute columns to keep
+columns_to_keep = []
+for i in range(len(support_v)):
+  if support_v[i]:
+    columns_to_keep.append(vt_working.columns[i])
+
+df_fin = pd.DataFrame()
+df_fin.insert(0, 'ID', ID)
+df_fin.insert(1, 'RelapseFreeSurvival (outcome)', y)
+
+for col in columns_to_keep:
+  df_fin.insert(len(df_fin.columns), col, vt_working[col])
+
+df_fin.to_csv(
+  'k_best_csv/variance_threshold_0.1.csv',
+  index=False
+)
 
 
