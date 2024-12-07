@@ -52,6 +52,8 @@ def hyper_tune_mlp(src):
 import json
 if __name__ == '__main__':
     files = [
+        'altered_csv/original.csv',
+
         'pca_csv/all_pca_1.csv', 
         'pca_csv/all_pca_2.csv', 
         'pca_csv/mri_pca_1.csv', 

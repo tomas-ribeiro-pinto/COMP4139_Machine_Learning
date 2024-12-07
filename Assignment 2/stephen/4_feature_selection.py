@@ -33,7 +33,7 @@ X_rest = X[rest_cols].copy()
 X_rest.loc[:, 'mri_pca_1'] = X_mri_pca[:, 0]
 
 X_rest.insert(0, 'ID', ID)
-X_rest.insert(2, 'RelapseFreeSurvival (outcome)', y)
+X_rest.insert(1, 'RelapseFreeSurvival (outcome)', y)
 
 X_rest.to_csv(
   'pca_csv/mri_pca_1.csv',

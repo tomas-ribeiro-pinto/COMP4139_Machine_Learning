@@ -48,26 +48,32 @@ def hyper_tune_svr(src):
 import json
 if __name__ == '__main__':
     files = [
+        # 'altered_csv/original.csv',
+        
         'pca_csv/all_pca_1.csv', 
         'pca_csv/all_pca_2.csv', 
         'pca_csv/mri_pca_1.csv', 
         'pca_csv/mri_pca_2.csv',
 
         'normalized_mri/normal_mri_cols_only.csv',
-        'normalized_mri/normal_mri_pca.csv',
+        'normalized_mri/normal_mri_pca_1.csv',
+        'normalized_mri/normal_mri_pca_2.csv',
+        'normalized_mri/mandatory_normal_mri_pca_1.csv',
+        'normalized_mri/mandatory_normal_mri_pca_2.csv',
+        'normalized_mri/norm_pca2_only.csv',
 
-        'correlation/correlation_filtered.csv',
-        'correlation/correlation_filtered.csv',
-        'correlation/filterd_by_coorelation_pca_1.csv',
-        'correlation/filterd_by_coorelation_pca_2.csv',
+        # 'correlation/correlation_filtered.csv',
+        # 'correlation/correlation_filtered.csv',
+        # 'correlation/filterd_by_coorelation_pca_1.csv',
+        # 'correlation/filterd_by_coorelation_pca_2.csv',
 
-        'imputed_csv/gene_predicted_rest_median_imputed.csv',
-        'imputed_csv/na_pcr_drapped.csv',
-        'imputed_csv/na_pcr_missing_median_imputed.csv',
-        'imputed_csv/gene_predicted_rest_median_imputed_no_outliers.csv',
+        # 'imputed_csv/gene_predicted_rest_median_imputed.csv',
+        # 'imputed_csv/na_pcr_drapped.csv',
+        # 'imputed_csv/na_pcr_missing_median_imputed.csv',
+        # 'imputed_csv/gene_predicted_rest_median_imputed_no_outliers.csv',
 
-        'k_best_csv/k_best_5.csv',
-        'lasso_csv/lasso_important_features.csv',
+        # 'k_best_csv/k_best_5.csv',
+        # 'lasso_csv/lasso_important_features.csv',
     ]
     result = {}
     for file in files:

@@ -105,10 +105,31 @@ if __name__ == '__main__':
     pca_mris = pca.fit_transform(norm_mris)
     norm_mris = normal_mri_only.iloc[:, :11]
     norm_mris['pca_1'] = pca_mris[:, 0]
+
+    norm_mris.to_csv('normalized_mri/normal_mri_pca_1.csv', index=False)
+
     norm_mris['pca_2'] = pca_mris[:, 1]
+    norm_mris.to_csv('normalized_mri/normal_mri_pca_2.csv', index=False)
 
-    norm_mris.to_csv('normalized_mri/normal_mri_pca.csv', index=False)
+    # pca and mandatory features
+    mandatory = ['ER', 'HER2', 'Gene']
 
+    mand_plus_norm_mri = pd.DataFrame()
+    mand_plus_norm_mri.insert(0, 'ID', df['ID'])
+    mand_plus_norm_mri.insert(1, 'pCR (outcome)', df['pCR (outcome)']),
+    mand_plus_norm_mri.insert(2, 'RelapseFreeSurvival (outcome)', df['RelapseFreeSurvival (outcome)'])
+    
+    for col in mandatory:
+        mand_plus_norm_mri[col] = df[col]
+    
+    mand_plus_norm_mri['pac_1'] = pca_mris[:, 0]
+    
+    mand_plus_norm_mri.to_csv('normalized_mri/mandatory_normal_mri_pca_1.csv', index=False)
+
+    mand_plus_norm_mri['pac_2'] = pca_mris[:, 1]
+    mand_plus_norm_mri.to_csv('normalized_mri/mandatory_normal_mri_pca_2.csv', index=False)
+
+    mand_plus_norm_mri.drop(columns=mandatory).to_csv('normalized_mri/norm_pca2_only.csv', index=False)
 
 
 
