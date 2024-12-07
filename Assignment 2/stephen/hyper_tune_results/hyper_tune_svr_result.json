@@ -1,0 +1,102 @@
+{
+    "pca_csv/all_pca_1.csv": {
+        "best_params": {
+            "C": 0.1,
+            "gamma": 0.1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.629498919215326,
+        "root_mean_squared_error": 30.08780730110604,
+        "r2_score": -0.03364347438945092
+    },
+    "pca_csv/all_pca_2.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.01,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.103122754295015,
+        "root_mean_squared_error": 29.181987650339806,
+        "r2_score": 0.02765714349126125
+    },
+    "pca_csv/mri_pca_1.csv": {
+        "best_params": {
+            "C": 1,
+            "gamma": 0.1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.278225231919713,
+        "root_mean_squared_error": 29.54356849031569,
+        "r2_score": 0.0034121407869697196
+    },
+    "pca_csv/mri_pca_2.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.01,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 21.79443654442703,
+        "root_mean_squared_error": 28.75523871813079,
+        "r2_score": 0.05588772556378241
+    },
+    "normalized_mri/normal_mri_cols_only.csv": {
+        "best_params": {
+            "C": 1,
+            "gamma": 0.1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.30212843254055,
+        "root_mean_squared_error": 29.529984483757573,
+        "r2_score": 0.004328383775119904
+    },
+    "normalized_mri/normal_mri_pca_1.csv": {
+        "best_params": {
+            "C": 1,
+            "gamma": 1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.50687628385993,
+        "root_mean_squared_error": 29.95870216244604,
+        "r2_score": -0.024791890607080758
+    },
+    "normalized_mri/normal_mri_pca_2.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 23.263380310311636,
+        "root_mean_squared_error": 30.14270781825445,
+        "r2_score": -0.03741904591551792
+    },
+    "normalized_mri/mandatory_normal_mri_pca_1.csv": {
+        "best_params": {
+            "C": 0.1,
+            "gamma": 0.1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.58438186245808,
+        "root_mean_squared_error": 30.080367713823286,
+        "r2_score": -0.03313237498893051
+    },
+    "normalized_mri/mandatory_normal_mri_pca_2.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 23.188435730977186,
+        "root_mean_squared_error": 31.79480053265967,
+        "r2_score": -0.15425535680309
+    },
+    "normalized_mri/norm_pca2_only.csv": {
+        "best_params": {
+            "C": 10,
+            "gamma": 0.1,
+            "kernel": "rbf"
+        },
+        "mean_absolute_error": 22.72667924522562,
+        "root_mean_squared_error": 31.21461713605907,
+        "r2_score": -0.11251458727768271
+    }
+}
