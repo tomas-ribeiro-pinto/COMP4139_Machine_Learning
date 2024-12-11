@@ -109,23 +109,24 @@ Xs = scaler.fit_transform(X)
 
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestRegressor
+# rnd_clf = RandomForestClassifier(n_estimators=1000, random_state=0, n_jobs=-1)
+# rnd_clf.fit(Xs, rgr_y)
+rnd_rgr = RandomForestRegressor(n_estimators=1000, random_state=0, n_jobs=-1)
+rnd_rgr.fit(Xs, rgr_y)
 
-
-rnd_clf = RandomForestClassifier(n_estimators=1000, random_state=0, n_jobs=-1)
-rnd_clf.fit(Xs, clf_y)
-
-importances = rnd_clf.feature_importances_
+importances = rnd_rgr.feature_importances_
 selected_indices = np.argsort(importances)[::-1]
 
 mandatory_features_indices = [1,3,10]
 
-top_features_indices = [i for i in selected_indices if i not in mandatory_features_indices][:3]
+top_features_indices = [i for i in selected_indices if i not in mandatory_features_indices][:30]
 
-top_features = Xs[:, top_features_indices]
+top_features = Xs[:, top_features_indices + mandatory_features_indices]
 
 print(top_features.shape)
 
-from sklearn.ensemble import RandomForestRegressor
+
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import mean_absolute_error, r2_score, root_mean_squared_error
 
@@ -133,11 +134,11 @@ from sklearn.metrics import mean_absolute_error, r2_score, root_mean_squared_err
 rnd_forest = RandomForestRegressor(random_state=42)
 
 param_grid = {
-    'max_depth': [1,2,3,4,5,6,7,8,9,10],
-    'n_estimators': [50, 75, 100],
-    'max_features': ['sqrt'],
-    'min_samples_split': [2, 5, 7, 10],
-    'min_samples_leaf': [1, 2, 4]
+  'max_depth': [1,2,3,4,5,6,7,8,9,10],
+  'n_estimators': [50, 75, 100],
+  'max_features': ['sqrt'],
+  'min_samples_split': [2, 5, 7, 10],
+  'min_samples_leaf': [1, 2, 4]
 }
 
 from sklearn.model_selection import train_test_split
