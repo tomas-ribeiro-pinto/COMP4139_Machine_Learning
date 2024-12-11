@@ -62,11 +62,15 @@ def outlierVote(data):
             final.append(True)
     return final
 
-def removeOutliers(df):
+def removeOutliers(data):
     # Remove outliers from the dataframe
-    for column in df.columns:
-        outliers = outlierVote(df[column])
-        # Calculate Non-Outlier Maximum using the outliers list
-        non_outlier_max = df.loc[~np.array(outliers), column].max()
-        # Replace outliers with the maximum non-outlier value
-        df.loc[outliers, column] = non_outlier_max
+    for column in data.columns:
+        outliers = outlierVote(data[column])
+        # Calculate Non-Outlier Maximum and minimum using the outliers list
+        non_outlier_max = data.loc[~np.array(outliers), column].max()
+        non_outlier_min = data.loc[~np.array(outliers), column].min()
+
+        # Replace outliers with the maximum or minimum non-outlier value
+        for i, outlier in enumerate(outliers):
+            if outlier:
+                data.loc[i, column] = non_outlier_max if data.loc[i, column] > non_outlier_max else non_outlier_min
